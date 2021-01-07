@@ -5,6 +5,7 @@ using System.Text;
 using Console = Colorful.Console;
 using System.Drawing;
 using System.Threading.Tasks;
+using System.Threading;
 
 namespace consoleGame
 {
@@ -36,12 +37,15 @@ namespace consoleGame
 
             //stopwatch expcet it locks me for the duration of the timer
             
-            //var time = new Stopwatch();
-            //time.Measure();
-
+            var time = new Stopwatch();
+            
+            Thread vlakno = new Thread(time.Measure);
+            vlakno.Start();
+            
             //user input
-            Console.Write("here: ");
+            Console.WriteLine("here: ");
             string input = Console.ReadLine();
+
 
             // if/else comparison of user input to the sentence from array
             if (input == targetText[num])

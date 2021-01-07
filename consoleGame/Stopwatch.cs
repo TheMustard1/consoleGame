@@ -11,12 +11,14 @@ namespace consoleGame
     {
         public void Measure()
         {
-            int i = 30;
+            //int i;
             TimeSpan interval = new TimeSpan(0, 0, 1);
             Console.WriteLine("\n");
 
-            do
+            for (int i = 30; i >= 0; i--)
             {
+                
+
                 Thread.Sleep(interval);
                 if (i <= 0)
                 {
@@ -26,10 +28,11 @@ namespace consoleGame
                 {
                     Console.Write("\r{0} seconds", i);
                 }
-                i--;
+            }
 
-            } while (i > 0);
 
+         }
+
+            
         }
     }
-}
